@@ -34,8 +34,4 @@ public class MoneyTest {
         
         assertEquals(false, result1.less(money2));
     }
-
-
-
-
 }

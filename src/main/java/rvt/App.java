@@ -6,10 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        //SpringApplication.run(App.class, args);
+
+        Money();
     }
     public static void Money(){
-        Money macins1 = new Money(0, 2);
+        Money macins1 = new Money(0, 3);
         Money macins2 = new Money(0, 3);
         Money kopejais_macins = macins1.plus(macins2);
         System.out.println();
@@ -17,5 +19,6 @@ public class App {
         System.out.println("Pirmajā maciņā ir vairāk nekā otrajā maciņā: "+ macins1.less(macins2));
         Money Starp_macins = macins1.minus(macins2);
         System.out.println("Atņemot no pirmā maciņa otro, paliek " + Starp_macins + " eiro");
+        System.out.println("pirmais un otrais maciņš ir vienāds: "+macins1.equals(macins2));
 }
 }

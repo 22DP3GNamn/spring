@@ -19,9 +19,9 @@ public class DefaultController {
     String hello(){
         return "hello";
     } 
-@GetMapping(value = "/about")
-ModelAndView about(){
-    ModelAndView modelAndView = new ModelAndView("about");
+    @GetMapping(value = "/about")
+    ModelAndView about(){
+        ModelAndView modelAndView = new ModelAndView("about");
 
     //Metode priekš koda testēšanas
 
@@ -45,7 +45,19 @@ ModelAndView about(){
         // carHashMap.put("year", "1950");
         //System.out.println(carHashMap.get("brand"));
 
+
+        
+        //Method Overloading
         Money macins1 = new Money(5, 55);
+
+        // macins1.plus(Money money);
+        // this.euros = euros + money.euros;
+        // macins1.plus(int euros);
+        // this.euros = euros + euros;
+        // macins1.plus(byte cents);
+        // this.cents = cents + cents;
+
+
         modelAndView.addObject("", macins1);
         return modelAndView;
     }

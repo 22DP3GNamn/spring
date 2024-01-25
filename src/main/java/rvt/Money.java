@@ -1,6 +1,8 @@
 package rvt;
-    
-    public class Money {
+
+import org.junit.Test;
+
+public class Money {
 
         private final int euros;
         private final int cents;
@@ -61,4 +63,19 @@ package rvt;
             Money newMoney = new Money(newEuro, newCents);
             return newMoney;
         }
+
+        public boolean eqals(Object compared){
+            if (this == compared){
+                return true;
+            }
+            if (!(compared instanceof Money)){
+                return false;
+            }
+            Money comparedMoney = (Money) compared;
+            if (this.euros == comparedMoney.euros && this.cents == comparedMoney.cents){
+                return true;
+            }
+            return false;
+        }
+
     }
