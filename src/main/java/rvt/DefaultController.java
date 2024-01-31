@@ -1,6 +1,5 @@
 package rvt;
 
-import java.util.HashMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +37,14 @@ public class DefaultController {
     @GetMapping(value = "/test")
     public ModelAndView testAction(){
         ModelAndView modelAndView = new ModelAndView("test");
-        
+        return modelAndView;
+    }
+    @GetMapping(value = "/registration")
+    public ModelAndView RegistrationPage(){
+        ModelAndView modelAndView = new ModelAndView("registration");
+        return modelAndView;
+    }
+
         // HashMap<String, String> carHashMap = new HashMap<>();
         // carHashMap.put("brand", "FORD");
         // carHashMap.put("model", "Mustang");
@@ -48,7 +54,7 @@ public class DefaultController {
 
         
         //Method Overloading
-        Money macins1 = new Money(5, 55);
+        // Money macins1 = new Money(5, 55);
 
         // macins1.plus(Money money);
         // this.euros = euros + money.euros;
@@ -58,7 +64,9 @@ public class DefaultController {
         // this.cents = cents + cents;
 
 
-        modelAndView.addObject("", macins1);
-        return modelAndView;
-    }
+        // modelAndView.addObject("", macins1);
+        // return modelAndView;
+
 }
+
+
