@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--# Head sadala - Mājaslapas iestaistīšana(kofig.) -->
     <title>Document</title>
+    <style>
+        body{
+            background-color: #f1f1f1;
+        }
+        h2{
+            text-align: center;
+            color: #000000;
+        }
+        input[type=text], input[type=number], select{
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            box-sizing: content-box;
+        }
+        input[type=submit]{
+            width: 100%;
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        input[type=submit]:hover{
+            background-color: #45a049;
+        }
+        div{
+            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <h2>Registration</h2>
@@ -11,22 +47,28 @@
     <form action="/registration"></form>
 
     <label for="name">Name</label><br>
-    <input type= "text" id=name placeholder="Ievadi savu vārdu"><br>
+    <input type="text" id=name placeholder="Ievadi savu vārdu" minlength="4" maxlength="30" required><br>
 
     <label for="username">Surname</label><br>
-    <input type= "text" id=username placeholder="Ievadi savu Uzvārdu"><br>
+    <input type="text" id=username placeholder="Ievadi savu Uzvārdu" minlength="4" maxlength="30" required><br>
 
-    <label for="Group">Group</label><br>
+    <label for="group">Group</label><br>
     <select name="" id="group">
         <option value="DP2-1">DP2-1</option>
         <option value="DP2-2">DP2-2</option>
+        <option value="DP2-1">DP2-3</option>
+        <option value="DP2-2">DP2-4</option>
     </select><br>
+    
+
+    <label for="Age">Age</label><br>
+    <input type="number" id=Age placeholder="Ievadi savu vecumu" min="6" max="120"><br>
+
+    <label for="Day">Day</label><br>
+    <input type="text" id=Day placeholder="Nedēļas diena"><br>
 
     <input type ="submit" value="Reģistrēties">
 
-
-
-
-
+    
 </body>
 </html>

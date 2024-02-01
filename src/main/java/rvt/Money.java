@@ -1,6 +1,5 @@
 package rvt;
 
-import org.junit.Test;
 
 public class Money {
 
