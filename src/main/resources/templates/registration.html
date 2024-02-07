@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--# Head sadala - Mājaslapas iestaistīšana(kofig.) -->
     <title>Document</title>
-</head>
-<style>
-     body {
-    /* Create a linear gradient background from top to bottom */
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
-    height: 100vh;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-input[type=text], input[type=number], input[type=date], select {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
+    <style>
+        body {
+            /* Create a linear gradient background from top to bottom */
+            background: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+        
+        input[type=text], input[type=number], input[type=date], select {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
     width: 20%;
     background-color: #4CAF50;
     color: white;
@@ -37,7 +39,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #ee0000;
 }
 
 .container {
@@ -68,15 +70,15 @@ h2 {
 </style>
 <body>
     <h2>Registration</h2>
-
+    
     <form action="/registration"></form>
-
+    
     <label for="name">Name</label><br>
     <input type="text" id=name placeholder="Ievadi savu vārdu" minlength="4" maxlength="30" required><br>
-
+    
     <label for="username">Surname</label><br>
     <input type="text" id=username placeholder="Ievadi savu Uzvārdu" minlength="4" maxlength="30" required><br>
-
+    
     <label for="group">Group</label><br>
     <select name="" id="group">
         <option value="DP2-1">DP2-1</option>
@@ -85,15 +87,16 @@ h2 {
         <option value="DP2-2">DP2-4</option>
     </select><br>
     
-
+    
     <label for="Age">Age</label><br>
     <input type="number" id=Age placeholder="Ievadi savu vecumu" min="6" max="120"><br>
-
+    
     <label for="Bday">Bday</label><br>
     <input type="date" id=Day placeholder="dzimšanas Gads"><br>
-
+    
     <input type ="submit" value="Reģistrēties">
-
+    
     
 </body>
 </html>
+</head>
