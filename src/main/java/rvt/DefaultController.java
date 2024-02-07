@@ -18,32 +18,36 @@ public class DefaultController {
     String hello(){
         return "hello";
     } 
+
     @GetMapping(value = "/about")
     ModelAndView about(){
         ModelAndView modelAndView = new ModelAndView("about");
-
-    //Metode priekš koda testēšanas
-
     return modelAndView;
     }
+
     @GetMapping(value = "/Links")
     String Links(){
         return "Links";
     }
+
     @GetMapping(value = "/Experiment")
     String Experiment(){
         return "Experiment";
     }
+
     @GetMapping(value = "/test")
     public ModelAndView testAction(){
         ModelAndView modelAndView = new ModelAndView("test");
         return modelAndView;
     }
+
     @GetMapping(value = "/registration")
     public ModelAndView RegistrationPage(){
         ModelAndView modelAndView = new ModelAndView("registration");
         return modelAndView;
     }
+
+
 
         // HashMap<String, String> carHashMap = new HashMap<>();
         // carHashMap.put("brand", "FORD");

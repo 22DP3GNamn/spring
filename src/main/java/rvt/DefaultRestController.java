@@ -18,7 +18,6 @@ public class DefaultRestController {
         "j@s.lv",
         "DP2-1");
 
-
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             String json = objectMapper.writeValueAsString(student);
