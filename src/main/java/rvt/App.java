@@ -36,4 +36,9 @@ public class App {
         int index = indexOfSmallest.FindindexOfSmallest(array);
         System.out.println("Index of smallest number: " + index);
     }
+
+    public static void Person(){
+        Person Gvido = new Person("Gvido", "Ziedkalne");
+        
+    }
 }

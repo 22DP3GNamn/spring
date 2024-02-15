@@ -1,10 +1,18 @@
 package rvt;
 
+import javax.naming.Binding;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 
 @Controller
 public class DefaultController {
@@ -42,12 +50,23 @@ public class DefaultController {
     }
 
     @GetMapping(value = "/registration")
-    public ModelAndView RegistrationPage(){
-        ModelAndView modelAndView = new ModelAndView("registration");
-        return modelAndView;
+    public String register(HttpServletRequest request, Model model){
+        model.addAttribute("student", new Student(null, null, null, null));
+        if(request.getParameter("success") != null){
+            return "registration-success";
+        }
+        return "registration";
     }
 
+    @PostMapping(value = "/registration")
+    public String register(@Valid @ModelAttribute("student")Students student, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "registration";
+        }
 
+        System.out.println(student);
+        return "redirect:/registration?success";
+    }
 
         // HashMap<String, String> carHashMap = new HashMap<>();
         // carHashMap.put("brand", "FORD");
@@ -71,6 +90,7 @@ public class DefaultController {
         // modelAndView.addObject("", macins1);
         // return modelAndView;
 
+    
 }
 
 
