@@ -53,7 +53,7 @@ public class DefaultController {
     public String register(HttpServletRequest request, Model model){
         model.addAttribute("student", new Student(null, null, null, null));
         if(request.getParameter("success") != null){
-            return "registration-success";
+            return "registration succesfull";
         }
         return "registration";
     }
