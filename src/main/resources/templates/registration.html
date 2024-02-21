@@ -69,28 +69,29 @@ h2 {
 <body>
     <h2>Registration</h2>
     
-    <form action="/register" method="post" ></form>
+    <form method="post" th:action="@{/registration?success}">
     
-    <label for="name">Name</label><br>
-    <input type="text" id=name placeholder="Ievadi savu vārdu" minlength="4" maxlength="30" required><br>
-    
-    <label for="username">Surname</label><br>
-    <input type="text" id=username placeholder="Ievadi savu Uzvārdu" minlength="4" maxlength="30" required><br>
+        <label for="name">Name</label><br>
+        <input type="text" id=name placeholder="Ievadi savu vārdu" minlength="4" maxlength="30" required><br>
+        
+        <label for="username">Surname</label><br>
+        <input type="text" id=username placeholder="Ievadi savu Uzvārdu" minlength="4" maxlength="30" required><br>
 
-    <label for="group">Group</label><br>
-    <select name="" id="group">
-        <option value="DP2-1">DP2-1</option>
-        <option value="DP2-2">DP2-2</option>
-        <option value="DP2-1">DP2-3</option>
-        <option value="DP2-2">DP2-4</option>
-    </select><br>
-    
-    <label for="Age">Age</label><br>
-    <input type="number" id=Age placeholder="Ievadi savu vecumu" min="6" max="120"><br>
-    <label for="Bday">Bday</label><br>
-    <input type="date" id=Day placeholder="dzimšanas Gads"><br>
-    
-    <input type ="submit" value="Reģistrēties">
+        <label for="group">Group</label><br>
+        <select name="" id="group">
+            <option value="DP2-1">DP2-1</option>
+            <option value="DP2-2">DP2-2</option>
+            <option value="DP2-1">DP2-3</option>
+            <option value="DP2-2">DP2-4</option>
+        </select><br>
+        
+        <label for="Age">Age</label><br>
+        <input type="number" id=Age placeholder="Ievadi savu vecumu" min="6" max="120"><br>
+        <label for="Bday">Bday</label><br>
+        <input type="date" id=Day placeholder="dzimšanas Gads"><br>
+        
+        <input type ="submit" value="Reģistrēties">
+    </form>
 </body>
 </html>
 </head>

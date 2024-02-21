@@ -1,7 +1,10 @@
 package rvt;
 
+import java.util.HashMap;
+
 import javax.naming.Binding;
 
+import org.apache.catalina.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -50,22 +53,30 @@ public class DefaultController {
     }
 
     @GetMapping(value = "/registration")
-    public String register(HttpServletRequest request, Model model){
-        model.addAttribute("student", new Student(null, null, null, null));
-        if(request.getParameter("success") != null){
-            return "registration succesfull";
+    public ModelAndView register(@RequestParam HashMap<String, String> allParams, User user){
+    // public String register(HttpServletRequest request, Model model){
+        // model.addAttribute("student", new Student(null, null, null, null));
+        // if(request.getParameter("success") != null){
+        //     return "/success";
+        // }
+        // return "/registration";
+        if(allParams.containsKey("success")){
+            ModelAndView modelAndView = new ModelAndView("success");
+            return modelAndView;
         }
-        return "registration";
+        ModelAndView modelAndView = new ModelAndView("registration");
+        return modelAndView;
     }
 
     @PostMapping(value = "/registration")
     public String register(@Valid @ModelAttribute("student")Students student, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "registration";
+            return "/registration";
         }
-
-        System.out.println(student);
-        return "redirect:/registration?success";
+        else{
+            System.out.println(student);
+            return "redirect:/registration?success";
+        }
     }
 
         // HashMap<String, String> carHashMap = new HashMap<>();
